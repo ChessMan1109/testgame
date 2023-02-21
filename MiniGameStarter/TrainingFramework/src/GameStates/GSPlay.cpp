@@ -44,15 +44,25 @@ void GSPlay::Init()
 		});
 	m_listButton.push_back(button);
 
+	// help
+	texture = ResourceManagers::GetInstance()->GetTexture("btn_help.tga");
+	button = std::make_shared<GameButton>(model, shader, texture);
+	button->Set2DPosition(Globals::screenWidth / 9, Globals::screenHeight / 15);
+	button->SetSize(50, 50);
+	button->SetOnClick([this]() {
+		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_HELP);
+		});
+	m_listButton.push_back(button);
+
 	// score
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("Brightly Crush Shine.otf");
-	m_score = std::make_shared< Text>(shader, font, "score: 10", TextColor::RED, 1.0);
+	m_score = std::make_shared< Text>(shader, font, "score: 10", TextColor::PURPLE, 1.0);
 	m_score->Set2DPosition(Vector2(5, 25));
 
 	shader = ResourceManagers::GetInstance()->GetShader("Animation");
-	texture = ResourceManagers::GetInstance()->GetTexture("Actor1_2.tga");
-	std::shared_ptr<SpriteAnimation> obj = std::make_shared<SpriteAnimation>(model, shader, texture, 9, 6, 3, 0.1f);
+	texture = ResourceManagers::GetInstance()->GetTexture("Jump.tga");
+	std::shared_ptr<SpriteAnimation> obj = std::make_shared<SpriteAnimation>(model, shader, texture, 8, 1, 0, 0.1f);
 	
 	obj->Set2DPosition(240, 400);
 	obj->SetSize(30, 40);
