@@ -23,13 +23,14 @@ public:
 			s_instance.reset();
 		}
 	}
-
 protected:
-	CSingleton() {}
+	CSingleton()
+	{
+		//s_instance = std::make_shared<T>(this);
+	}
 	virtual ~CSingleton() {
 		s_instance.reset();
 	}
-
 private:
 	static std::shared_ptr<T> s_instance;
 };

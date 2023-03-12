@@ -5,6 +5,7 @@
 #include "esUtil_win.h"
 #include "Math.h"
 #include "TGA.h"
+
 #include "GameConfig.h"
 #include "Singleton.h"
 #include <list>

@@ -16,6 +16,27 @@
     <Filter Include="TrainingFramework\src\GameStates">
       <UniqueIdentifier>{2a875364-1a2b-4ea6-a6fe-716988208916}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TrainingFramework\src\GameObject\ParallelBackGround">
+      <UniqueIdentifier>{c008b1d0-51a5-4821-926e-2efaca4544ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TrainingFramework\src\GameObject\Character">
+      <UniqueIdentifier>{5abd50c2-0ed6-49c1-ae8a-e7fd236fc7eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TrainingFramework\src\GameObject\Boss">
+      <UniqueIdentifier>{964813fd-4870-4f41-8a1c-e022026adf8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TrainingFramework\src\GameObject\Bullet">
+      <UniqueIdentifier>{33062ad2-26ef-461a-b335-66285e50df0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TrainingFramework\src\GameObject\SecretBoss">
+      <UniqueIdentifier>{c552dafb-6aca-428f-b0f2-65a5026d24de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TrainingFramework\src\GameObject\Creep">
+      <UniqueIdentifier>{4e346cae-0ea1-47b2-84f4-8f6d8bd84039}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TrainingFramework\src\GameObject\Collision">
+      <UniqueIdentifier>{9b912282-6fb6-435c-ab4c-86bc83247a6c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp">
@@ -33,10 +54,10 @@
     <ClCompile Include="src\GameObject\Sprite3D.cpp">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameObject\Model.cpp">
+    <ClCompile Include="src\GameObject\Models.cpp">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameObject\Shader.cpp">
+    <ClCompile Include="src\GameObject\Shaders.cpp">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClCompile>
     <ClCompile Include="src\GameObject\Texture.cpp">
@@ -48,7 +69,7 @@
     <ClCompile Include="src\GameObject\Font.cpp">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameStates\GameStateBase.cpp">
+    <ClCompile Include="src\GameStates\GameStatebase.cpp">
       <Filter>TrainingFramework\src\GameStates</Filter>
     </ClCompile>
     <ClCompile Include="src\GameStates\GameStateMachine.cpp">
@@ -69,14 +90,131 @@
     <ClCompile Include="src\GameObject\GameButton.cpp">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameObject\SpriteAnimation.cpp">
+    <ClCompile Include="src\GameObject\AnimationSprite.cpp">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameStates\GSSetting.cpp">
+    <ClCompile Include="src\GameStates\GSCredit.cpp">
       <Filter>TrainingFramework\src\GameStates</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameStates\GSHelp.cpp">
+    <ClCompile Include="src\GameStates\GSHighScore.cpp">
       <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameStates\GSOption.cpp">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Score.cpp">
+      <Filter>TrainingFramework\src\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\StaticLayer.cpp">
+      <Filter>TrainingFramework\src\GameObject\ParallelBackGround</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\ParallelBackground.cpp">
+      <Filter>TrainingFramework\src\GameObject\ParallelBackGround</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KeyBoard.cpp">
+      <Filter>TrainingFramework\src\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Character\RunCState.cpp">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Character\JumpCState.cpp">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Character\IdleCState.cpp">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Character\DeathCState.cpp">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Character\DashCState.cpp">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Character\Charater.cpp">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Character\AttackCState.cpp">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Player.cpp">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Character\FallCState.cpp">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Boss\Boss.cpp">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Boss\JumpBState.cpp">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Boss\DeathBState.cpp">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Boss\JumpBiteBState.cpp">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Boss\BiteAttackBState.cpp">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Boss\PosionAttackBState.cpp">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Boss\HurtBState.cpp">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Boss\IdleBState.cpp">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Boss\FallBState.cpp">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Bullet\Bullet.cpp">
+      <Filter>TrainingFramework\src\GameObject\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Bullet\BulletManager.cpp">
+      <Filter>TrainingFramework\src\GameObject\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\SecretBoss\SecretBoss.cpp">
+      <Filter>TrainingFramework\src\GameObject\SecretBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\SecretBoss\MoveLeftSBState.cpp">
+      <Filter>TrainingFramework\src\GameObject\SecretBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\SecretBoss\MoveRightSBState.cpp">
+      <Filter>TrainingFramework\src\GameObject\SecretBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\SecretBoss\LazeAttackSBState.cpp">
+      <Filter>TrainingFramework\src\GameObject\SecretBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\SecretBoss\BulletAttackSBState.cpp">
+      <Filter>TrainingFramework\src\GameObject\SecretBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Entity.cpp">
+      <Filter>TrainingFramework\src\GameObject\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\CheckCollision.cpp">
+      <Filter>TrainingFramework\src\GameObject\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Enemy.cpp">
+      <Filter>TrainingFramework\src\GameObject\Creep</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\EnemyManager.cpp">
+      <Filter>TrainingFramework\src\GameObject\Creep</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\BornMonsterManager.cpp">
+      <Filter>TrainingFramework\src\GameObject\Creep</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\Flame.cpp">
+      <Filter>TrainingFramework\src\GameObject\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\FlameManager.cpp">
+      <Filter>TrainingFramework\src\GameObject\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameStates\GSEndGame.cpp">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\LevelGame.cpp">
+      <Filter>TrainingFramework\src\GameObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -101,10 +239,10 @@
     <ClInclude Include="src\GameObject\Sprite3D.h">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameObject\Model.h">
+    <ClInclude Include="src\GameObject\Models.h">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameObject\Shader.h">
+    <ClInclude Include="src\GameObject\Shaders.h">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClInclude>
     <ClInclude Include="src\GameObject\Texture.h">
@@ -116,7 +254,7 @@
     <ClInclude Include="src\GameObject\Font.h">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameStates\GameStateBase.h">
+    <ClInclude Include="src\GameStates\GameStatebase.h">
       <Filter>TrainingFramework\src\GameStates</Filter>
     </ClInclude>
     <ClInclude Include="src\GameStates\GameStateMachine.h">
@@ -137,14 +275,149 @@
     <ClInclude Include="src\GameObject\GameButton.h">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameObject\SpriteAnimation.h">
+    <ClInclude Include="src\GameObject\AnimationSprite.h">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameStates\GSSetting.h">
+    <ClInclude Include="src\GameStates\GSCredit.h">
       <Filter>TrainingFramework\src\GameStates</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameStates\GSHelp.h">
+    <ClInclude Include="src\GameStates\GSHighScore.h">
       <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStates\GSOption.h">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Score.h">
+      <Filter>TrainingFramework\src\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\StaticLayer.h">
+      <Filter>TrainingFramework\src\GameObject\ParallelBackGround</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\ParallelBackground.h">
+      <Filter>TrainingFramework\src\GameObject\ParallelBackGround</Filter>
+    </ClInclude>
+    <ClInclude Include="src\keyBoard.h">
+      <Filter>TrainingFramework\src\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Character\RunCState.h">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Character\JumpCState.h">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Character\IdleCState.h">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Character\ICState.h">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Character\ICharacter.h">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Character\DeathCState.h">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Character\DashCState.h">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Character\Character.h">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Character\AttackCState.h">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Player.h">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Character\FallCState.h">
+      <Filter>TrainingFramework\src\GameObject\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Boss\IBState.h">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Boss\IBoss.h">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Boss\Boss.h">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Boss\JumpBState.h">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Boss\DeathBState.h">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Boss\JumpBiteBState.h">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Boss\BiteAttackBState.h">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Boss\PosionAttackBState.h">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Boss\HurtBState.h">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Boss\IdleBState.h">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Boss\FallBState.h">
+      <Filter>TrainingFramework\src\GameObject\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Bullet\Bullet.h">
+      <Filter>TrainingFramework\src\GameObject\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Bullet\BulletManager.h">
+      <Filter>TrainingFramework\src\GameObject\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\SecretBoss\ISBState.h">
+      <Filter>TrainingFramework\src\GameObject\SecretBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\SecretBoss\ISecretBoss.h">
+      <Filter>TrainingFramework\src\GameObject\SecretBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\SecretBoss\SecretBoss.h">
+      <Filter>TrainingFramework\src\GameObject\SecretBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\SecretBoss\MoveLeftSBState.h">
+      <Filter>TrainingFramework\src\GameObject\SecretBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\SecretBoss\MoveRightSBState.h">
+      <Filter>TrainingFramework\src\GameObject\SecretBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\SecretBoss\LazeAttackSBState.h">
+      <Filter>TrainingFramework\src\GameObject\SecretBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\SecretBoss\BulletAttackSBState.h">
+      <Filter>TrainingFramework\src\GameObject\SecretBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Entity.h">
+      <Filter>TrainingFramework\src\GameObject\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Enemy.h">
+      <Filter>TrainingFramework\src\GameObject\Creep</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\CheckCollision.h">
+      <Filter>TrainingFramework\src\GameObject\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\EnemyManager.h">
+      <Filter>TrainingFramework\src\GameObject\Creep</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\BornMonsterManager.h">
+      <Filter>TrainingFramework\src\GameObject\Creep</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\Flame.h">
+      <Filter>TrainingFramework\src\GameObject\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\FlameManager.h">
+      <Filter>TrainingFramework\src\GameObject\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStates\GSEndGame.h">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameObject\LevelGame.h">
+      <Filter>TrainingFramework\src\GameObject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,27 +1,29 @@
 #pragma once
-#include "GameStateBase.h"
+#include "gamestatebase.h"
+#include "DynamicObject.h"
 
-class GSIntro : public GameStateBase
+class GSIntro :
+	public GameStateBase
 {
 public:
 	GSIntro();
 	~GSIntro();
 
-	void	Init() override;
-	void	Exit() override;
+	void Init();
+	void Exit();
 
-	void	Pause() override;
-	void	Resume() override;
+	void Pause();
+	void Resume();
 
-	void	HandleEvents() override;
-	void	HandleKeyEvents(int key, bool bIsPressed) override;
-	void	HandleTouchEvents(int x, int y, bool bIsPressed) override;
-	void	HandleMouseMoveEvents(int x, int y) override;
-	void	Update(float deltaTime) override;
-	void	Draw() override;
+	void HandleEvents();
+	void HandleKeyEvents(int key, bool bIsPressed);
+	void HandleTouchEvents(int x, int y, bool bIsPressed);
+	void Update(float deltaTime);
+	void Draw();
 
 private:
-	std::shared_ptr<Sprite2D> m_logo;
-	float	m_time;
+	std::list<std::shared_ptr<Sprite2D>> m_listImage;
+	std::shared_ptr<Text>  m_Text;
+	float m_time;
 };
 

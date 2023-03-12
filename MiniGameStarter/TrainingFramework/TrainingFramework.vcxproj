@@ -17,14 +17,6 @@
       <Configuration>Debug-Nvidia</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release-AMD|Win32">
-      <Configuration>Release-AMD</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release-Angle|Win32">
-      <Configuration>Release-Angle</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
     <ProjectConfiguration Include="Release-ATI|Win32">
       <Configuration>Release-ATI</Configuration>
       <Platform>Win32</Platform>
@@ -43,46 +35,34 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Angle|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-AMD|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-ATI|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-ATI|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Nvidia|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-AMD|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Angle|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Nvidia|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -103,12 +83,6 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Nvidia|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-AMD|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Angle|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Nvidia|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
@@ -123,16 +97,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Nvidia|Win32'">
     <OutDir>$(SolutionDir)\BIN-Nvidia\</OutDir>
-    <IntDir>$(Configuration)\</IntDir>
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-AMD|Win32'">
-    <OutDir>$(SolutionDir)\BIN-AMD\</OutDir>
-    <IntDir>$(Configuration)\</IntDir>
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Angle|Win32'">
-    <OutDir>$(SolutionDir)\BIN-Angle\</OutDir>
     <IntDir>$(Configuration)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
@@ -159,9 +123,9 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Nvidia|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Include\Nvidia;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;$(SolutionDir)\Include\Soloud;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>false</MinimalRebuild>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Include\AMD;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;$(SolutionDir)soloud20200207\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader>
@@ -170,8 +134,8 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libEGL.lib;libGLESv2.lib;WinMM.Lib;soloud_static_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\Lib\Nvidia;$(SolutionDir)\Lib\Soloud;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libEGL.lib;libGLESv2.lib;WinMM.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Lib\Nvidia;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -181,31 +145,8 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Include\Nvidia;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;$(SolutionDir)\Include\Soloud;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-    </ClCompile>
-    <Link>
-      <AdditionalDependencies>libEGL.lib;libGLESv2.lib;WinMM.Lib;soloud_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\Lib\Nvidia;$(SolutionDir)\Lib\Soloud;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Console</SubSystem>
-      <OptimizeReferences>true</OptimizeReferences>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <TargetMachine>MachineX86</TargetMachine>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-AMD|Win32'">
-    <ClCompile>
-      <Optimization>MaxSpeed</Optimization>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Include\AMD;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Include\AMD;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;$(SolutionDir)\soloud20200207\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
@@ -215,30 +156,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>libEGL.lib;libGLESv2.lib;WinMM.Lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\Lib\AMD;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Console</SubSystem>
-      <OptimizeReferences>true</OptimizeReferences>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <TargetMachine>MachineX86</TargetMachine>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Angle|Win32'">
-    <ClCompile>
-      <Optimization>MaxSpeed</Optimization>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Include\Angle;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-    </ClCompile>
-    <Link>
-      <AdditionalDependencies>libEGL.lib;libGLESv2.lib;WinMM.Lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\Lib\Angle;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Lib\Nvidia;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -249,9 +167,9 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-ATI|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Include\ATI;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>false</MinimalRebuild>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Include\AMD;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader>
@@ -271,8 +189,8 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Include\ATI;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Include\AMD;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
@@ -294,8 +212,8 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>$(SolutionDir)\Include\AMD;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>false</MinimalRebuild>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader>
@@ -314,9 +232,9 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Angle|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Include\Angle;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>false</MinimalRebuild>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Include\AMD;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader>
@@ -330,12 +248,14 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
-      <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ProjectReference Include="..\freetype\builds\windows\vc2019\freetype.vcxproj">
       <Project>{78b079bd-9fc7-4b9e-b4a6-96da0f00248b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\soloud20200207\build\vs2019\SoloudStatic.vcxproj">
+      <Project>{83540317-6fb7-92bb-183d-cb71047f5e3e}</Project>
     </ProjectReference>
     <ProjectReference Include="..\Utilities\Utilities.vcxproj">
       <Project>{0d44529e-f7dd-4454-8ead-9afd857f53b4}</Project>
@@ -345,23 +265,62 @@
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\GameManager\ResourceManagers.cpp" />
+    <ClCompile Include="src\GameObject\AnimationSprite.cpp" />
+    <ClCompile Include="src\GameObject\BornMonsterManager.cpp" />
+    <ClCompile Include="src\GameObject\Boss\BiteAttackBState.cpp" />
+    <ClCompile Include="src\GameObject\Boss\Boss.cpp" />
+    <ClCompile Include="src\GameObject\Boss\DeathBState.cpp" />
+    <ClCompile Include="src\GameObject\Boss\FallBState.cpp" />
+    <ClCompile Include="src\GameObject\Boss\HurtBState.cpp" />
+    <ClCompile Include="src\GameObject\Boss\IdleBState.cpp" />
+    <ClCompile Include="src\GameObject\Boss\JumpBiteBState.cpp" />
+    <ClCompile Include="src\GameObject\Boss\JumpBState.cpp" />
+    <ClCompile Include="src\GameObject\Boss\PosionAttackBState.cpp" />
+    <ClCompile Include="src\GameObject\Bullet\Bullet.cpp" />
+    <ClCompile Include="src\GameObject\Bullet\BulletManager.cpp" />
+    <ClCompile Include="src\GameObject\Character\AttackCState.cpp" />
+    <ClCompile Include="src\GameObject\Character\Charater.cpp" />
+    <ClCompile Include="src\GameObject\Character\DashCState.cpp" />
+    <ClCompile Include="src\GameObject\Character\DeathCState.cpp" />
+    <ClCompile Include="src\GameObject\Character\FallCState.cpp" />
+    <ClCompile Include="src\GameObject\Character\IdleCState.cpp" />
+    <ClCompile Include="src\GameObject\Character\JumpCState.cpp" />
+    <ClCompile Include="src\GameObject\Character\RunCState.cpp" />
+    <ClCompile Include="src\GameObject\CheckCollision.cpp" />
+    <ClCompile Include="src\GameObject\Enemy.cpp" />
+    <ClCompile Include="src\GameObject\EnemyManager.cpp" />
+    <ClCompile Include="src\GameObject\Entity.cpp" />
+    <ClCompile Include="src\GameObject\Flame.cpp" />
+    <ClCompile Include="src\GameObject\FlameManager.cpp" />
     <ClCompile Include="src\GameObject\Font.cpp" />
     <ClCompile Include="src\GameObject\GameButton.cpp" />
+    <ClCompile Include="src\GameObject\LevelGame.cpp" />
+    <ClCompile Include="src\GameObject\ParallelBackground.cpp" />
+    <ClCompile Include="src\GameObject\Player.cpp" />
+    <ClCompile Include="src\GameObject\SecretBoss\BulletAttackSBState.cpp" />
+    <ClCompile Include="src\GameObject\SecretBoss\LazeAttackSBState.cpp" />
+    <ClCompile Include="src\GameObject\SecretBoss\MoveLeftSBState.cpp" />
+    <ClCompile Include="src\GameObject\SecretBoss\MoveRightSBState.cpp" />
+    <ClCompile Include="src\GameObject\SecretBoss\SecretBoss.cpp" />
+    <ClCompile Include="src\GameObject\StaticLayer.cpp" />
+    <ClCompile Include="src\GameObject\Score.cpp" />
     <ClCompile Include="src\GameObject\Sprite2D.cpp" />
     <ClCompile Include="src\GameObject\Camera.cpp" />
     <ClCompile Include="src\GameObject\Sprite3D.cpp" />
-    <ClCompile Include="src\GameObject\Model.cpp" />
-    <ClCompile Include="src\GameObject\Shader.cpp" />
-    <ClCompile Include="src\GameObject\SpriteAnimation.cpp" />
+    <ClCompile Include="src\GameObject\Models.cpp" />
+    <ClCompile Include="src\GameObject\Shaders.cpp" />
     <ClCompile Include="src\GameObject\Text.cpp" />
     <ClCompile Include="src\GameObject\Texture.cpp" />
-    <ClCompile Include="src\GameStates\GameStateBase.cpp" />
+    <ClCompile Include="src\GameStates\GameStatebase.cpp" />
     <ClCompile Include="src\GameStates\GameStateMachine.cpp" />
-    <ClCompile Include="src\GameStates\GSHelp.cpp" />
+    <ClCompile Include="src\GameStates\GSCredit.cpp" />
+    <ClCompile Include="src\GameStates\GSEndGame.cpp" />
+    <ClCompile Include="src\GameStates\GSHighScore.cpp" />
     <ClCompile Include="src\GameStates\GSIntro.cpp" />
     <ClCompile Include="src\GameStates\GSMenu.cpp" />
+    <ClCompile Include="src\GameStates\GSOption.cpp" />
     <ClCompile Include="src\GameStates\GSPlay.cpp" />
-    <ClCompile Include="src\GameStates\GSSetting.cpp" />
+    <ClCompile Include="src\KeyBoard.cpp" />
     <ClCompile Include="src\TrainingFramework.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -369,24 +328,69 @@
     <ClInclude Include="src\GameConfig.h" />
     <ClInclude Include="src\GameManager\ResourceManagers.h" />
     <ClInclude Include="src\GameManager\Singleton.h" />
+    <ClInclude Include="src\GameObject\AnimationSprite.h" />
     <ClInclude Include="src\GameObject\BaseObject.h" />
+    <ClInclude Include="src\GameObject\BornMonsterManager.h" />
+    <ClInclude Include="src\GameObject\Boss\BiteAttackBState.h" />
+    <ClInclude Include="src\GameObject\Boss\Boss.h" />
+    <ClInclude Include="src\GameObject\Boss\DeathBState.h" />
+    <ClInclude Include="src\GameObject\Boss\FallBState.h" />
+    <ClInclude Include="src\GameObject\Boss\HurtBState.h" />
+    <ClInclude Include="src\GameObject\Boss\IBoss.h" />
+    <ClInclude Include="src\GameObject\Boss\IBState.h" />
+    <ClInclude Include="src\GameObject\Boss\IdleBState.h" />
+    <ClInclude Include="src\GameObject\Boss\JumpBiteBState.h" />
+    <ClInclude Include="src\GameObject\Boss\JumpBState.h" />
+    <ClInclude Include="src\GameObject\Boss\PosionAttackBState.h" />
+    <ClInclude Include="src\GameObject\Bullet\Bullet.h" />
+    <ClInclude Include="src\GameObject\Bullet\BulletManager.h" />
+    <ClInclude Include="src\GameObject\Character\AttackCState.h" />
+    <ClInclude Include="src\GameObject\Character\Character.h" />
+    <ClInclude Include="src\GameObject\Character\DashCState.h" />
+    <ClInclude Include="src\GameObject\Character\DeathCState.h" />
+    <ClInclude Include="src\GameObject\Character\FallCState.h" />
+    <ClInclude Include="src\GameObject\Character\ICharacter.h" />
+    <ClInclude Include="src\GameObject\Character\ICState.h" />
+    <ClInclude Include="src\GameObject\Character\IdleCState.h" />
+    <ClInclude Include="src\GameObject\Character\JumpCState.h" />
+    <ClInclude Include="src\GameObject\Character\RunCState.h" />
+    <ClInclude Include="src\GameObject\CheckCollision.h" />
+    <ClInclude Include="src\GameObject\Enemy.h" />
+    <ClInclude Include="src\GameObject\EnemyManager.h" />
+    <ClInclude Include="src\GameObject\Entity.h" />
+    <ClInclude Include="src\GameObject\Flame.h" />
+    <ClInclude Include="src\GameObject\FlameManager.h" />
     <ClInclude Include="src\GameObject\Font.h" />
     <ClInclude Include="src\GameObject\GameButton.h" />
+    <ClInclude Include="src\GameObject\LevelGame.h" />
+    <ClInclude Include="src\GameObject\ParallelBackground.h" />
+    <ClInclude Include="src\GameObject\Player.h" />
+    <ClInclude Include="src\GameObject\SecretBoss\BulletAttackSBState.h" />
+    <ClInclude Include="src\GameObject\SecretBoss\ISBState.h" />
+    <ClInclude Include="src\GameObject\SecretBoss\ISecretBoss.h" />
+    <ClInclude Include="src\GameObject\SecretBoss\LazeAttackSBState.h" />
+    <ClInclude Include="src\GameObject\SecretBoss\MoveLeftSBState.h" />
+    <ClInclude Include="src\GameObject\SecretBoss\MoveRightSBState.h" />
+    <ClInclude Include="src\GameObject\SecretBoss\SecretBoss.h" />
+    <ClInclude Include="src\GameObject\StaticLayer.h" />
+    <ClInclude Include="src\GameObject\Score.h" />
     <ClInclude Include="src\GameObject\Sprite2D.h" />
     <ClInclude Include="src\GameObject\Camera.h" />
     <ClInclude Include="src\GameObject\Sprite3D.h" />
-    <ClInclude Include="src\GameObject\Model.h" />
-    <ClInclude Include="src\GameObject\Shader.h" />
-    <ClInclude Include="src\GameObject\SpriteAnimation.h" />
+    <ClInclude Include="src\GameObject\Models.h" />
+    <ClInclude Include="src\GameObject\Shaders.h" />
     <ClInclude Include="src\GameObject\Text.h" />
     <ClInclude Include="src\GameObject\Texture.h" />
-    <ClInclude Include="src\GameStates\GameStateBase.h" />
+    <ClInclude Include="src\GameStates\GameStatebase.h" />
     <ClInclude Include="src\GameStates\GameStateMachine.h" />
-    <ClInclude Include="src\GameStates\GSHelp.h" />
+    <ClInclude Include="src\GameStates\GSCredit.h" />
+    <ClInclude Include="src\GameStates\GSEndGame.h" />
+    <ClInclude Include="src\GameStates\GSHighScore.h" />
     <ClInclude Include="src\GameStates\GSIntro.h" />
     <ClInclude Include="src\GameStates\GSMenu.h" />
+    <ClInclude Include="src\GameStates\GSOption.h" />
     <ClInclude Include="src\GameStates\GSPlay.h" />
-    <ClInclude Include="src\GameStates\GSSetting.h" />
+    <ClInclude Include="src\keyBoard.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

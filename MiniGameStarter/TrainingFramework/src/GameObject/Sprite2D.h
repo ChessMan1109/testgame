@@ -1,26 +1,35 @@
 #pragma once
-#include "BaseObject.h"
+#include "baseobject.h"
 
 class Sprite2D : public BaseObject
 {
+private:
+	std::string		m_Text;
+	void			CaculateWorldMatrix();
 protected:
-	GLint		m_iWidth;
-	GLint		m_iHeight;
-	GLuint		m_vboId;
+	Vector2			m_Vec2DPos;
+	GLint			m_iHeight;
+	GLint			m_iWidth;
 
 public:
-	Sprite2D() : BaseObject(), m_iWidth(0), m_iHeight(0), m_vboId(0) {}
-	Sprite2D(GLint id, std::shared_ptr<Model> model, std::shared_ptr<Shader> shader, std::shared_ptr<Texture> texture);
-	Sprite2D(GLint id, std::shared_ptr<Model> model, std::shared_ptr<Shader> shader, Vector4 color);
-	Sprite2D(std::shared_ptr<Model> model, std::shared_ptr<Shader> shader, std::shared_ptr<Texture> texture);
+	Sprite2D(std::shared_ptr<Models> model, std::shared_ptr<Shaders> shader, std::shared_ptr<Texture> texture);
+	Sprite2D(std::shared_ptr<Models> model, std::shared_ptr<Shaders> shader, Vector4 color);
 	~Sprite2D();
 
 	void		Init() override;
 	void		Draw() override;
 	void		Update(GLfloat deltatime) override;
 
-	void		Set2DPosition(GLint x, GLint y);
-	void		SetRotation(Vector3 rotation);
+	void		SetText(std::string text);
+	std::string	GetText();
+
+	void		Set2DPosition(GLfloat x, GLfloat y);
+	void		Set2DPosition(Vector2 pos);
+
+	Vector2		Get2DPosition();
 	void		SetSize(GLint width, GLint height);
+
+	void		SetRotation(float angle);
+
 };
 

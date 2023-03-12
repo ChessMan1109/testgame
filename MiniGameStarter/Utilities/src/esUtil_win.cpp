@@ -3,6 +3,7 @@
 
 POINT      WDpoint;
 
+
 // Main window procedure
 LRESULT WINAPI ESWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
@@ -53,7 +54,7 @@ LRESULT WINAPI ESWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		POINT      point;
 		GetCursorPos(&point);
 		if (esContext && esContext->mouseFunc)
-			esContext->mouseFunc(esContext, (int)point.x - WDpoint.x, (int)point.y - WDpoint.y, false);
+			esContext->mouseFunc(esContext, (int)point.x - WDpoint.x , (int)point.y - WDpoint.y , false);
 	}
 	break;
 	case WM_LBUTTONDOWN:
@@ -62,17 +63,7 @@ LRESULT WINAPI ESWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		POINT      point;
 		GetCursorPos(&point);
 		if (esContext && esContext->mouseFunc)
-			esContext->mouseFunc(esContext, (int)point.x - WDpoint.x, (int)point.y - WDpoint.y, true);
-
-	}
-	break;
-	case WM_MOUSEMOVE:
-	{
-		ESContext* esContext = (ESContext*)(LONG_PTR)GetWindowLongPtr(hWnd, GWL_USERDATA);
-		POINT      point;
-		GetCursorPos(&point);
-		if (esContext && esContext->mouseMoveFunc)
-			esContext->mouseMoveFunc(esContext, (int)point.x - WDpoint.x, (int)point.y - WDpoint.y);
+			esContext->mouseFunc(esContext, (int)point.x - WDpoint.x , (int)point.y - WDpoint.y , true);
 
 	}
 	break;

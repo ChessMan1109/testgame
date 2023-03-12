@@ -1,16 +1,15 @@
 #pragma once
-#include "utilities.h" 
+	#include "utilities.h" 
 
 
 
 class Texture
 {
-	GLuint		m_id; 
-	GLuint		m_textureId;
-	
+	GLuint		m_iTextGlId;
+	GLuint		m_iTextID;
 public:
-	GLint		Init(const char* fileName, GLuint wrapMode, GLuint minFilterMode, GLuint magFilterMode);
-	void		SetTextureId(GLuint id);
+	int			Init(const char *szFileName,GLuint wapMode,GLuint filterMode);
+	void		Set2DTextureId(GLuint);
 	GLuint		Get2DTextureId();
 	GLuint		Get2DTextureAdd();
 };

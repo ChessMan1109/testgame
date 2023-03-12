@@ -1,6 +1,9 @@
 #pragma once
-#include "GameStateBase.h"
+#include "gamestatebase.h"
 #include "GameButton.h"
+#include "AnimationSprite.h"
+#include <string.h>
+#include "soloud_wav.h"
 
 class GSMenu :
 	public GameStateBase
@@ -8,24 +11,26 @@ class GSMenu :
 public:
 	GSMenu();
 	~GSMenu();
+	
+	void Init();
+	void Exit();
 
-	void	Init() override;
-	void	Exit() override;
+	void Pause();
+	void Resume();
 
-	void	Pause() override;
-	void	Resume() override;
-
-	void	HandleEvents() override;
-	void	HandleKeyEvents(int key, bool bIsPressed) override;
-	void	HandleTouchEvents(int x, int y, bool bIsPressed) override;
-	void	HandleMouseMoveEvents(int x, int y) override;
-	void	Update(float deltaTime) override;
-	void	Draw() override;
+	void HandleEvents();
+	void HandleKeyEvents(int key, bool bIsPressed);
+	void HandleTouchEvents(int x, int y, bool bIsPressed);
+	void Update(float deltaTime);
+	void Draw();
 
 private:
-	std::shared_ptr<Sprite2D>				m_background;
-	std::list<std::shared_ptr<GameButton>>	m_listButton;
-	std::shared_ptr<Text>					m_textGameName;
+	std::shared_ptr<ParallelBackground> m_BgUnder;
+	std::shared_ptr<ParallelBackground> m_BgMid;
+	std::shared_ptr<ParallelBackground> m_BgAbove;
 
+	std::list<std::shared_ptr<GameButton>>	m_listButton;
+	std::shared_ptr<Text>  m_Text_gameName;
+	std::list<std::shared_ptr<AnimationSprite>> m_listAnimation;
 };
 

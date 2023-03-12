@@ -10,8 +10,10 @@
 #endif
 
 // Create Win32 instance and window
-GLboolean WinCreate(ESContext* esContext, const char* title);
+GLboolean WinCreate ( ESContext *esContext, const char *title );
+
+
 
 // Start main windows loop
-void WinLoop(ESContext* esContext);
+void WinLoop ( ESContext *esContext );
 

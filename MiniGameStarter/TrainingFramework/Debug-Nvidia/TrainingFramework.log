@@ -1,96 +1,397 @@
-﻿  Application.cpp
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(158,77): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2029): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,int,int,int&,int,int&,float,float,float>(_Ty &,int &&,int &&,int &,int &&,int &,float &&,float &&,float &&) noexcept(false)' being compiled
-          with
-          [
-              _Ty=Camera
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2748): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<int,int,int&,int,int&,float,float,float>(int &&,int &&,int &,int &&,int &,float &&,float &&,float &&)' being compiled
-          with
-          [
-              _Ty=Camera
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2748): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<int,int,int&,int,int&,float,float,float>(int &&,int &&,int &,int &&,int &,float &&,float &&,float &&)' being compiled
-          with
-          [
-              _Ty=Camera
-          ]
-C:\Users\han.glschool\testgame\testgame\MiniGameStarter\TrainingFramework\src\Application.cpp(20): message : see reference to function template instantiation 'std::shared_ptr<Camera> std::make_shared<Camera,int,int,int&,int,int&,float,float,float>(int &&,int &&,int &,int &&,int &,float &&,float &&,float &&)' being compiled
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(158,77): warning C4244: 'argument': conversion from '_Ty' to 'GLfloat', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-  ResourceManagers.cpp
-  Font.cpp
-  GameButton.cpp
-  Sprite2D.cpp
-  Camera.cpp
-  Sprite3D.cpp
-  Model.cpp
-C:\Users\han.glschool\testgame\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Model.cpp(25,18): warning C4244: 'initializing': conversion from 'std::streamoff' to 'size_t', possible loss of data
-  Shader.cpp
-  SpriteAnimation.cpp
-C:\Users\han.glschool\testgame\testgame\MiniGameStarter\TrainingFramework\src\GameObject\SpriteAnimation.cpp(82,39): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-C:\Users\han.glschool\testgame\testgame\MiniGameStarter\TrainingFramework\src\GameObject\SpriteAnimation.cpp(87,39): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-C:\Users\han.glschool\testgame\testgame\MiniGameStarter\TrainingFramework\src\GameObject\SpriteAnimation.cpp(92,39): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-C:\Users\han.glschool\testgame\testgame\MiniGameStarter\TrainingFramework\src\GameObject\SpriteAnimation.cpp(97,39): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-  Text.cpp
-  Texture.cpp
-  GameStateBase.cpp
-  GameStateMachine.cpp
-  GSHelp.cpp
-C:\Users\han.glschool\testgame\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSHelp.cpp(29,72): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-  GSIntro.cpp
-C:\Users\han.glschool\testgame\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSIntro.cpp(20,86): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-C:\Users\han.glschool\testgame\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSIntro.cpp(20,52): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-  GSMenu.cpp
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  TrainingFramework.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\TrainingFramework.cpp(49,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  KeyBoard.cpp
   GSPlay.cpp
-C:\Users\han.glschool\testgame\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(34,92): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-C:\Users\han.glschool\testgame\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(34,58): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-C:\Users\han.glschool\testgame\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(156,2): warning C4065: switch statement contains 'default' but no 'case' labels
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(158,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(71,109): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(72,129): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(72,111): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(73,125): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(73,107): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(74,124): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(74,106): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(75,119): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(75,101): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(76,120): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(76,102): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(77,120): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(77,102): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(80,64): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(80,42): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(81,72): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(81,50): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(105,47): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(106,56): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(110,155): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(110,116): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(110,105): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(111,151): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(111,112): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(111,101): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(120,137): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(120,119): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(121,127): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(122,149): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(122,131): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(124,53): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(135,139): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(135,112): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(136,145): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(136,118): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(145,143): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(145,116): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(146,146): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(146,119): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(239,24): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(231,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
           with
           [
               _Ty=double
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2029): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::shared_ptr<Shader>&,std::shared_ptr<Font>&,const char(&)[10],TextColor,double>(_Ty &,std::shared_ptr<Shader> &,std::shared_ptr<Font> &,const char (&)[10],TextColor &&,double &&) noexcept(false)' being compiled
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2031,1): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[2],TEXT_COLOR,double>(_Ty &,std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[2],TEXT_COLOR &&,double &&) noexcept(false)' being compiled
           with
           [
               _Ty=Text
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2748): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shader>&,std::shared_ptr<Font>&,const char(&)[10],TextColor,double>(std::shared_ptr<Shader> &,std::shared_ptr<Font> &,const char (&)[10],TextColor &&,double &&)' being compiled
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2704,1): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[2],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[2],TEXT_COLOR &&,double &&)' being compiled
           with
           [
               _Ty=Text
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2748): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shader>&,std::shared_ptr<Font>&,const char(&)[10],TextColor,double>(std::shared_ptr<Shader> &,std::shared_ptr<Font> &,const char (&)[10],TextColor &&,double &&)' being compiled
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2704,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[2],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[2],TEXT_COLOR &&,double &&)' being compiled
           with
           [
               _Ty=Text
           ]
-C:\Users\han.glschool\testgame\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(60): message : see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shader>&,std::shared_ptr<Font>&,const char(&)[10],TextColor,double>(std::shared_ptr<Shader> &,std::shared_ptr<Font> &,const char (&)[10],TextColor &&,double &&)' being compiled
-  GSSetting.cpp
-C:\Users\han.glschool\testgame\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSSetting.cpp(29,72): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-  TrainingFramework.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSPlay.cpp(67,77): message : see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[2],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[2],TEXT_COLOR &&,double &&)' being compiled
+  GSOption.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSOption.cpp(23,60): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSOption.cpp(23,42): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSOption.cpp(29,36): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSOption.cpp(39,54): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSOption.cpp(39,37): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSOption.cpp(49,57): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSOption.cpp(49,39): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSOption.cpp(60,61): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSOption.cpp(60,38): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(231,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2031,1): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[7],TEXT_COLOR,double>(_Ty &,std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[7],TEXT_COLOR &&,double &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2704,1): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[7],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[7],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2704,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[7],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[7],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSOption.cpp(59,84): message : see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[7],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[7],TEXT_COLOR &&,double &&)' being compiled
+  GSMenu.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSMenu.cpp(52,54): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSMenu.cpp(52,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSMenu.cpp(64,57): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSMenu.cpp(64,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSMenu.cpp(75,57): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSMenu.cpp(75,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSMenu.cpp(86,57): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSMenu.cpp(86,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSMenu.cpp(97,57): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSMenu.cpp(97,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSMenu.cpp(110,56): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSMenu.cpp(116,57): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSMenu.cpp(116,36): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(231,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2031,1): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[13],TEXT_COLOR,double>(_Ty &,std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[13],TEXT_COLOR &&,double &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2704,1): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[13],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[13],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2704,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[13],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[13],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSMenu.cpp(109,96): message : see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[13],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[13],TEXT_COLOR &&,double &&)' being compiled
+  GSIntro.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSIntro.cpp(25,53): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSIntro.cpp(25,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSIntro.cpp(33,68): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSIntro.cpp(33,47): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(231,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2031,1): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[12],TEXT_COLOR,double>(_Ty &,std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[12],TEXT_COLOR &&,double &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2704,1): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[12],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[12],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2704,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[12],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[12],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSIntro.cpp(32,86): message : see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[12],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[12],TEXT_COLOR &&,double &&)' being compiled
+  GSHighScore.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSHighScore.cpp(23,60): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSHighScore.cpp(23,42): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSHighScore.cpp(29,36): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSHighScore.cpp(39,51): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSHighScore.cpp(39,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSHighScore.cpp(53,58): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSHighScore.cpp(53,37): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSHighScore.cpp(63,66): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSHighScore.cpp(63,39): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(231,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2031,1): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[11],TEXT_COLOR,double>(_Ty &,std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[11],TEXT_COLOR &&,double &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2704,1): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[11],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[11],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2704,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[11],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[11],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSHighScore.cpp(52,88): message : see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[11],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[11],TEXT_COLOR &&,double &&)' being compiled
+  GSEndGame.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSEndGame.cpp(38,60): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSEndGame.cpp(38,42): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSEndGame.cpp(44,55): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSEndGame.cpp(44,37): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSEndGame.cpp(57,57): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSEndGame.cpp(57,39): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSEndGame.cpp(70,62): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSEndGame.cpp(70,38): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSEndGame.cpp(74,58): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSEndGame.cpp(74,38): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSEndGame.cpp(78,62): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSEndGame.cpp(78,38): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSEndGame.cpp(82,58): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSEndGame.cpp(82,38): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSEndGame.cpp(84,49): warning C4244: 'argument': conversion from '__int64' to 'int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(231,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2031,1): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[11],TEXT_COLOR,double>(_Ty &,std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[11],TEXT_COLOR &&,double &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2704,1): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[11],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[11],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2704,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[11],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[11],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSEndGame.cpp(69,88): message : see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[11],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[11],TEXT_COLOR &&,double &&)' being compiled
+  GSCredit.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSCredit.cpp(23,60): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSCredit.cpp(23,42): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSCredit.cpp(31,36): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSCredit.cpp(42,50): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSCredit.cpp(44,53): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(231,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2031,1): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[55],TEXT_COLOR,double>(_Ty &,std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[55],TEXT_COLOR &&,double &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2704,1): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[55],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[55],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\memory(2704,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[55],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[55],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameStates\GSCredit.cpp(41,130): message : see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[55],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[55],TEXT_COLOR &&,double &&)' being compiled
+  GameStateMachine.cpp
+  GameStatebase.cpp
+  Texture.cpp
+  Text.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Text.cpp(24,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Text.cpp(25,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Text.cpp(171,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Text.cpp(172,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Text.cpp(182,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Text.cpp(183,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Shaders.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Shaders.cpp(21,2): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'const std::string'
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Shaders.cpp(21,2): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 2 has type 'const std::string'
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Shaders.cpp(25,3): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'const std::string'
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Shaders.cpp(32,3): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'const std::string'
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Shaders.cpp(44,2): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'const std::string'
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Shaders.cpp(44,2): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 2 has type 'const std::string'
+  Models.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Models.cpp(10,3): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'const std::string'
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Models.cpp(13,2): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'const std::string'
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Models.cpp(25,18): warning C4244: 'initializing': conversion from 'std::streamoff' to 'size_t', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Models.cpp(35,12): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Models.cpp(40,9): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Models.cpp(62,8): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Models.cpp(68,9): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Sprite3D.cpp
+  Camera.cpp
+  Sprite2D.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Sprite2D.cpp(151,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Sprite2D.cpp(152,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Sprite2D.cpp(162,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Sprite2D.cpp(163,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Score.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Score.cpp(21,6): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Score.cpp(32,6): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  StaticLayer.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(7,94): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(7,76): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(7,145): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(7,127): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(11,106): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(11,88): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(11,157): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(11,139): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(16,12): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(17,12): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(18,19): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(19,19): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(53,54): warning C4244: 'argument': conversion from 'GLfloat' to 'int', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(53,38): warning C4244: 'argument': conversion from 'GLfloat' to 'int', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(57,29): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(57,26): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(58,43): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(58,38): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(59,21): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(59,18): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(65,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(65,26): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(66,43): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\StaticLayer.cpp(66,38): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
   Generating Code...
-  LINK : C:\Users\han.glschool\testgame\testgame\MiniGameStarter\\BIN-Nvidia\TrainingFramework.exe not found or not built by the last incremental link; performing full link
+  Compiling...
+  SecretBoss.cpp
+  MoveRightSBState.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\SecretBoss\MoveRightSBState.cpp(18,41): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\SecretBoss\MoveRightSBState.cpp(18,25): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\SecretBoss\MoveRightSBState.cpp(39,24): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
+  MoveLeftSBState.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\SecretBoss\MoveLeftSBState.cpp(17,41): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\SecretBoss\MoveLeftSBState.cpp(17,25): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+  LazeAttackSBState.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\SecretBoss\LazeAttackSBState.cpp(21,41): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\SecretBoss\LazeAttackSBState.cpp(21,25): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+  BulletAttackSBState.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\SecretBoss\BulletAttackSBState.cpp(16,41): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\SecretBoss\BulletAttackSBState.cpp(16,25): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+  Player.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Player.cpp(35,13): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
+  ParallelBackground.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\ParallelBackground.cpp(17,54): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\ParallelBackground.cpp(18,43): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  LevelGame.cpp
+  GameButton.cpp
+  Font.cpp
+  FlameManager.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\FlameManager.cpp(55,26): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  Flame.cpp
+  Entity.cpp
+  EnemyManager.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\EnemyManager.cpp(45,74): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\EnemyManager.cpp(48,67): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\EnemyManager.cpp(48,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  Enemy.cpp
+  CheckCollision.cpp
+  RunCState.cpp
+  JumpCState.cpp
+  IdleCState.cpp
+  FallCState.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Character\FallCState.cpp(83,12): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
+  Generating Code...
+  Compiling...
+  DeathCState.cpp
+  DashCState.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Character\DashCState.cpp(75,12): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
+  Charater.cpp
+  AttackCState.cpp
+  BulletManager.cpp
+  Bullet.cpp
+  PosionAttackBState.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\PosionAttackBState.cpp(17,38): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\PosionAttackBState.cpp(17,24): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\PosionAttackBState.cpp(37,74): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  JumpBState.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\JumpBState.cpp(17,41): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\JumpBState.cpp(17,25): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+  JumpBiteBState.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\JumpBiteBState.cpp(19,41): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\JumpBiteBState.cpp(19,25): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+  IdleBState.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\IdleBState.cpp(18,41): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\IdleBState.cpp(18,25): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+  HurtBState.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\HurtBState.cpp(18,41): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\HurtBState.cpp(18,25): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+  FallBState.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\FallBState.cpp(18,41): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\FallBState.cpp(18,25): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+  DeathBState.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\DeathBState.cpp(18,41): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\DeathBState.cpp(18,25): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+  Boss.cpp
+  BiteAttackBState.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\BiteAttackBState.cpp(17,41): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\Boss\BiteAttackBState.cpp(17,25): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+  BornMonsterManager.cpp
+  AnimationSprite.cpp
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\AnimationSprite.cpp(104,39): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Git\game\testgame\MiniGameStarter\TrainingFramework\src\GameObject\AnimationSprite.cpp(109,39): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  ResourceManagers.cpp
+  Application.cpp
+  Generating Code...
 Application.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
 LINK : warning LNK4098: defaultlib 'LIBCMTD' conflicts with use of other libs; use /NODEFAULTLIB:library
-soloud_static_d.lib(dr_impl.obj) : warning LNK4099: PDB 'soloud_static.pdb' was not found with 'soloud_static_d.lib(dr_impl.obj)' or at 'C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\soloud_static.pdb'; linking object as if no debug info
-soloud_static_d.lib(soloud_wav.obj) : warning LNK4099: PDB 'soloud_static.pdb' was not found with 'soloud_static_d.lib(soloud_wav.obj)' or at 'C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\soloud_static.pdb'; linking object as if no debug info
-soloud_static_d.lib(stb_vorbis.obj) : warning LNK4099: PDB 'soloud_static.pdb' was not found with 'soloud_static_d.lib(stb_vorbis.obj)' or at 'C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\soloud_static.pdb'; linking object as if no debug info
-soloud_static_d.lib(soloud.obj) : warning LNK4099: PDB 'soloud_static.pdb' was not found with 'soloud_static_d.lib(soloud.obj)' or at 'C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\soloud_static.pdb'; linking object as if no debug info
-soloud_static_d.lib(soloud_audiosource.obj) : warning LNK4099: PDB 'soloud_static.pdb' was not found with 'soloud_static_d.lib(soloud_audiosource.obj)' or at 'C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\soloud_static.pdb'; linking object as if no debug info
-soloud_static_d.lib(soloud_core_basicops.obj) : warning LNK4099: PDB 'soloud_static.pdb' was not found with 'soloud_static_d.lib(soloud_core_basicops.obj)' or at 'C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\soloud_static.pdb'; linking object as if no debug info
-soloud_static_d.lib(soloud_core_getters.obj) : warning LNK4099: PDB 'soloud_static.pdb' was not found with 'soloud_static_d.lib(soloud_core_getters.obj)' or at 'C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\soloud_static.pdb'; linking object as if no debug info
-soloud_static_d.lib(soloud_core_setters.obj) : warning LNK4099: PDB 'soloud_static.pdb' was not found with 'soloud_static_d.lib(soloud_core_setters.obj)' or at 'C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\soloud_static.pdb'; linking object as if no debug info
-soloud_static_d.lib(soloud_core_voicegroup.obj) : warning LNK4099: PDB 'soloud_static.pdb' was not found with 'soloud_static_d.lib(soloud_core_voicegroup.obj)' or at 'C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\soloud_static.pdb'; linking object as if no debug info
-soloud_static_d.lib(soloud_core_voiceops.obj) : warning LNK4099: PDB 'soloud_static.pdb' was not found with 'soloud_static_d.lib(soloud_core_voiceops.obj)' or at 'C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\soloud_static.pdb'; linking object as if no debug info
-soloud_static_d.lib(soloud_fader.obj) : warning LNK4099: PDB 'soloud_static.pdb' was not found with 'soloud_static_d.lib(soloud_fader.obj)' or at 'C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\soloud_static.pdb'; linking object as if no debug info
-soloud_static_d.lib(soloud_fft.obj) : warning LNK4099: PDB 'soloud_static.pdb' was not found with 'soloud_static_d.lib(soloud_fft.obj)' or at 'C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\soloud_static.pdb'; linking object as if no debug info
-soloud_static_d.lib(soloud_file.obj) : warning LNK4099: PDB 'soloud_static.pdb' was not found with 'soloud_static_d.lib(soloud_file.obj)' or at 'C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\soloud_static.pdb'; linking object as if no debug info
-soloud_static_d.lib(soloud_thread.obj) : warning LNK4099: PDB 'soloud_static.pdb' was not found with 'soloud_static_d.lib(soloud_thread.obj)' or at 'C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\soloud_static.pdb'; linking object as if no debug info
-soloud_static_d.lib(soloud_winmm.obj) : warning LNK4099: PDB 'soloud_static.pdb' was not found with 'soloud_static_d.lib(soloud_winmm.obj)' or at 'C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\soloud_static.pdb'; linking object as if no debug info
-soloud_static_d.lib(soloud_null.obj) : warning LNK4099: PDB 'soloud_static.pdb' was not found with 'soloud_static_d.lib(soloud_null.obj)' or at 'C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\soloud_static.pdb'; linking object as if no debug info
-  TrainingFramework.vcxproj -> C:\Users\han.glschool\testgame\testgame\MiniGameStarter\BIN-Nvidia\TrainingFramework.exe
+  TrainingFramework.vcxproj -> D:\Git\game\testgame\MiniGameStarter\BIN-Nvidia\TrainingFramework.exe

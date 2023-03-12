@@ -1,10 +1,15 @@
 #include "targetver.h"
-#include "Shader.h"
+#include "Shaders.h"
 #include "Application.h"
 #include "utilities.h" 
+#include "soloud_wav.h"
+#include "soloud_file.h"
 
-int Globals::screenWidth = 480;
-int Globals::screenHeight = 800;
+#include <time.h>
+
+GLint screenWidth = 768;
+GLint screenHeight = 480;
+
 
 GLint Init(ESContext* esContext)
 {
@@ -23,19 +28,14 @@ void Update(ESContext* esContext, GLfloat deltaTime)
 	Application::GetInstance()->Update(deltaTime);
 }
 
-void OnKey(ESContext* esContext, unsigned char key, bool bbIsPresseded)
+void Key(ESContext* esContext, unsigned char key, bool bbIsPresseded)
 {
 	Application::GetInstance()->HandleKeyEvent(key, bbIsPresseded);
 }
 
-void OnMouseClick(ESContext* esContext, GLint x, GLint y, bool bbIsPresseded)
+void Mouse(ESContext* esContext, GLint x, GLint y, bool bbIsPresseded)
 {
 	Application::GetInstance()->HandleTouchEvent(x, y, bbIsPresseded);
-}
-
-void OnMouseMove(ESContext* esContext, GLint x, GLint y)
-{
-	Application::GetInstance()->HandleMouseMoveEvent(x, y);
 }
 
 void CleanUp()
@@ -46,24 +46,28 @@ void CleanUp()
 
 GLint _tmain(GLint argc, _TCHAR* argv[])
 {
+	srand(time(NULL));
 	ESContext esContext;
 	esInitContext(&esContext);
-	esCreateWindow(&esContext, "Epic Game", Globals::screenWidth, Globals::screenHeight, ES_WINDOW_RGB | ES_WINDOW_DEPTH);
+	esCreateWindow(&esContext, "Game Run Now", screenWidth, screenHeight, ES_WINDOW_RGB | ES_WINDOW_DEPTH);
 	if (Init(&esContext) != 0)
 		return 0;
 
 	esRegisterDrawFunc(&esContext, Draw);
 	esRegisterUpdateFunc(&esContext, Update);
-	esRegisterKeyFunc(&esContext, OnKey);
-	esRegisterMouseFunc(&esContext, OnMouseClick);
-	esRegisterMouseMoveFunc(&esContext, OnMouseMove);
+	esRegisterKeyFunc(&esContext, Key);
+	esRegisterMouseFunc(&esContext, Mouse);
 	esMainLoop(&esContext);
 
 	//releasing OpenGL resources
 	CleanUp();
 
+	//identifying memory leaks
+	//MemoryDump();
 	//printf("Press any key...\n");
 	//_getch();
 
 	return 0;
 }
+
+//#endif

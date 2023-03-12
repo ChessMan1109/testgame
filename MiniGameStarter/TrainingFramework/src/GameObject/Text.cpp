@@ -1,34 +1,34 @@
 #include "Text.h"
-#include "GameConfig.h"
 #include "Font.h"
-#include "Shader.h"
-#include "Camera.h"
-#include "Application.h"
+#include "Shaders.h"
 
 
-Text::Text(std::shared_ptr<Shader> shader, std::shared_ptr<Font> font, std::string text, TextColor color, float size, TextAlign align)
-	: m_font(font), m_text(text), m_scale(Vector2(size, size)), m_align(align)
+extern GLint screenWidth;
+extern GLint screenHeight;
+
+
+void Text::CaculateWorldMatrix()
 {
-	m_position = Vector3(-1.0f, 1.0f, 1.0f);
-	m_pShader = shader;
-	m_color = EnumToVector(color);
-	Init();
+	Matrix m_Sc, m_T;
+	m_Sc.SetScale(m_Vec3Scale);
+	m_T.SetTranslation(m_Vec3Position);
+	m_WorldMat = m_Sc * m_T;
 }
 
-Text::Text(std::shared_ptr<Shader> shader, std::shared_ptr<Font> font, std::string text, Vector4 color, float size, TextAlign align)
-	: m_font(font), m_text(text), m_scale(Vector2(size, size)), m_align(align)
-{
-	m_position = Vector3(-1.0f, 1.0f, 1.0f);
-	m_pShader = shader;
-	m_color = color;
-	Init();
-}
 
-Text::Text(std::shared_ptr<Shader> shader, std::shared_ptr<Font> font, std::string text, std::shared_ptr<Texture> texture, float size, TextAlign align)
-	: BaseObject(-1, nullptr, shader, texture), m_font(font), m_text(text), m_scale(Vector2(size, size)), m_align(align)
+Text::Text(std::shared_ptr<Shaders> sha, std::shared_ptr<Font> font, std::string text, TEXT_COLOR color, float size)
 {
-	m_position = Vector3(-1.0f, 1.0f, 1.0f);
-	Init();
+	m_Vec3Position = Vector3(0, 0, 0);
+	m_Vec2DPos = Vector2(0, 0);
+
+	float xx = (2.0 * m_Vec2DPos.x) / screenWidth - 1.0;
+	float yy = 1.0 - (2.0 * m_Vec2DPos.y) / screenHeight;
+	m_Vec3Position = Vector3(xx, yy, 1.0);
+	m_font = font;
+	m_text = text;
+	m_Color = EnumToVector(color);
+	m_pShader = sha;
+	m_scale = Vector2(size, size);
 }
 
 Text::~Text()
@@ -37,17 +37,16 @@ Text::~Text()
 
 void Text::Init()
 {
-	SetCamera(Application::GetInstance()->GetCamera());
-	CalculateWorldMatrix();
 }
 
 void Text::Draw()
 {
-	if (m_pCamera == nullptr) return;
 	GLuint iTempShaderVaribleGLID = -1;
 
-	glUseProgram(m_pShader->m_program);
-	glBindBuffer(GL_ARRAY_BUFFER, m_font->GetFontVboId());
+	glUseProgram(m_pShader->program);
+
+	glBindBuffer(GL_ARRAY_BUFFER, m_font->getArrBuffer());
+
 
 	iTempShaderVaribleGLID = m_pShader->GetAttribLocation((char*)"a_posL");
 	if (iTempShaderVaribleGLID != -1)
@@ -59,27 +58,28 @@ void Text::Draw()
 
 	iTempShaderVaribleGLID = m_pShader->GetUniformLocation((char*)"u_color");
 	if (iTempShaderVaribleGLID != -1)
-		glUniform4fv(iTempShaderVaribleGLID, 1, &m_color.x);
+		glUniform4fv(iTempShaderVaribleGLID, 1, &m_Color.x);
 
 	iTempShaderVaribleGLID = m_pShader->GetUniformLocation((char*)"u_texture");
 	if (iTempShaderVaribleGLID != -1)
 	{
 		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, m_font->GetFontTextureId());
+		glBindTexture(GL_TEXTURE_2D, m_font->getTextFontAdd());
 		glUniform1i(iTempShaderVaribleGLID, 0);
 	}
 
-	// TODO: implementing text alignment
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-	float sx = 1.0f / Globals::screenWidth * m_scale.x;
-	float sy = 1.0f / Globals::screenHeight * m_scale.y;
-	float x = m_position.x;
-	float y = m_position.y;
+	float sx = 1.0f / screenWidth * m_scale.x;
+	float sy = 1.0f / screenHeight * m_scale.y;
+	float x = m_Vec3Position.x;
+	float y = m_Vec3Position.y;
 
-	FT_GlyphSlot glyphSlot = m_font->GetGlyphSlot();
+	FT_GlyphSlot glyphSlot = m_font->getFtGlyph();
 	for (const char* p = m_text.c_str(); *p; p++)
 	{
-		if (FT_Load_Char(m_font->GetFace(), *p, FT_LOAD_RENDER))
+		if (FT_Load_Char(m_font->getFtFace(), *p, FT_LOAD_RENDER))
 		{
 			continue;
 		}
@@ -119,67 +119,69 @@ void Text::Update(GLfloat deltatime)
 
 
 
-void Text::SetFont(std::shared_ptr<Font> font)
+void Text::setFont(std::shared_ptr<Font> font)
 {
 	m_font = font;
 }
 
-void Text::SetText(std::string text) {
+void Text::setText(std::string text) {
 	m_text = text;
 }
 
 
 
-Vector4 Text::EnumToVector(TextColor color)
+Vector4 Text::EnumToVector(TEXT_COLOR color)
 {
 	Vector4 vecColor;
 	switch (color)
 	{
-	case TextColor::BLACK:
-		vecColor = Vector4(0.0f, 0.0f, 0.0f, 1.0f);
-		break;
-	case TextColor::WHITE:
+	case TEXT_COLOR::WHITE:
 		vecColor = Vector4(1.0f, 1.0f, 1.0f, 1.0f);
 		break;
-	case TextColor::RED:
+	case TEXT_COLOR::RED:
 		vecColor = Vector4(1.0f, 0.0f, 0.0f, 1.0f);
 		break;
-	case TextColor::GREEN:
+	case TEXT_COLOR::GREEN:
 		vecColor = Vector4(0.0f, 1.0f, 0.0f, 1.0f);
 		break;
-	case TextColor::BLUE:
+	case TEXT_COLOR::BLUE:
 		vecColor = Vector4(0.0f, 0.0f, 1.0f, 1.0f);
 		break;
-	case TextColor::YELLOW:
+	case TEXT_COLOR::YELLOW:
 		vecColor = Vector4(1.0f, 1.0f, 0.0f, 1.0f);
 		break;
-	case TextColor::PURPLE:
-		vecColor = Vector4(0.5f, 0.0f, 0.5f, 1.0f);
+	case TEXT_COLOR::PURPLE:
+		vecColor = Vector4(0.5f, 0.0f, 1.0f, 1.0f);
 		break;
-	case TextColor::CYAN:
-		vecColor = Vector4(0.0f, 1.0f, 1.0f, 1.0f);
+	case TEXT_COLOR::CYAN:
+		vecColor = Vector4(0.0f, 0.9f, 0.9f, 1.0f);
 		break;
 	default:
-		vecColor = Vector4(0.0f, 0.0f, 0.0f, 1.0f);
+		vecColor = Vector4(1.0f, 1.0f, 1.0f, 1.0f);
 		break;
 	}
 	return vecColor;
 }
 
-void Text::Set2DPosition(GLfloat x, GLfloat y)
+void Text::Set2DPosition(GLfloat width, GLfloat height)
 {
-	// Convert to top-left origin
-	float xx = (2.0f * x) / Globals::screenWidth - 1.0f;
-	float yy = 1.0f - (2.0f * y) / Globals::screenHeight;
-	m_position = Vector3(xx, yy, 1.0f);
-	CalculateWorldMatrix();
+	m_Vec2DPos.x = width;
+	m_Vec2DPos.y = height;
+
+	float xx = (2.0 * m_Vec2DPos.x) / screenWidth - 1.0;
+	float yy = 1.0 - (2.0 * m_Vec2DPos.y) / screenHeight;
+	m_Vec3Position = Vector3(xx, yy, 1.0);
+
+	CaculateWorldMatrix();
 }
 
 void Text::Set2DPosition(Vector2 pos)
 {
-	// Convert to top-left origin
-	float xx = (2.0f * pos.x) / Globals::screenWidth - 1.0f;
-	float yy = 1.0f - (2.0f * pos.y) / Globals::screenHeight;
-	m_position = Vector3(xx, yy, 1.0f);
-	CalculateWorldMatrix();
+	m_Vec2DPos = pos;
+
+	float xx = (2.0 * m_Vec2DPos.x) / screenWidth - 1.0;
+	float yy = 1.0 - (2.0 * m_Vec2DPos.y) / screenHeight;
+	m_Vec3Position = Vector3(xx, yy, 1.0);
+
+	CaculateWorldMatrix();
 }

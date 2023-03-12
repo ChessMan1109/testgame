@@ -5,7 +5,7 @@
     <ClCompile Include="src\esUtil.cpp" />
     <ClCompile Include="src\esUtil_win.cpp" />
     <ClCompile Include="src\TGA.cpp" />
-    <ClCompile Include="src\CMath.cpp" />
+    <ClCompile Include="src\U_Math.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\esUtil.h" />
@@ -13,6 +13,6 @@
     <ClInclude Include="src\targetver.h" />
     <ClInclude Include="src\TGA.h" />
     <ClInclude Include="src\utilities.h" />
-    <ClInclude Include="src\CMath.h" />
+    <ClInclude Include="src\U_Math.h" />
   </ItemGroup>
 </Project>

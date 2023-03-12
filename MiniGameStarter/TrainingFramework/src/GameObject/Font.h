@@ -10,33 +10,33 @@ class Font
 
 public:
 	Font(const std::string& font);
-	~Font();
-	bool		Init(const std::string& font);
-	GLuint		GetFontTextureId();
-	GLuint		GetFontVboId();
-	FT_Face		GetFace();
-	FT_GlyphSlot GetGlyphSlot();
+	bool		initWithFiles(const std::string& font);
+	GLuint		getTextFontAdd();
+	GLuint		getArrBuffer();
+	FT_Face		getFtFace();
+	FT_GlyphSlot getFtGlyph();
 
-	void SetName(std::string name) {
-		m_name = name;
+	void setName(std::string name) {
+		_name = name;
 	}
-	std::string GetName() {
-		return m_name;
+	std::string getName() {
+		return _name;
 	}
-	void SetId(GLuint id) {
-		m_id = id;
+	void setId(GLuint id) {
+		_id = id;
 	}
-	GLuint GetId() {
-		return m_id;
+	GLuint getId() {
+		return _id;
 	}
 
 private:
-	std::string		m_name;
-	GLuint			m_id;
-	GLuint			m_vboId;
-	GLuint			m_textureId;
+	std::string _name;
+	GLuint		_id;
+	GLuint		_vboId;
+	GLuint		_iTextID;
 
-	FT_Library		m_library;
-	FT_Face			m_face;
-	FT_GlyphSlot	m_glyphSlot;
+	FT_Library			_library;
+	FT_Face				_face;
+	FT_GlyphSlot		_glyphSlot;
+
 };

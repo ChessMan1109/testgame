@@ -1,7 +1,7 @@
 #include "ResourceManagers.h"
-#include "GameObject/Shader.h"
+#include "GameObject/Shaders.h"
 #include "GameObject/Texture.h"
-#include "GameObject/Model.h"
+#include "GameObject/Models.h"
 #include "GameObject/Camera.h"
 #include "GameObject/Font.h"
 #include "GameObject/Sprite2D.h"
@@ -14,15 +14,13 @@ ResourceManagers::ResourceManagers()
 	std::string dataPath = "..\\Data\\";
 	m_ShaderPath = dataPath + "Shaders\\";
 	m_TexturePath = dataPath + "Textures\\";
-	m_ModelsPath = dataPath + "Models\\";
+	m_ModelsPath = dataPath + "Model\\";
 	m_FontPath = dataPath + "fonts\\";
-	m_SoundPath = dataPath + "Sounds\\";
-	m_Soloud.init();
+	m_listSoundEffect.resize(SoundEffect::SE_Nums);
 }
 
 ResourceManagers::~ResourceManagers()
 {
-	m_Soloud.deinit();
 }
 
 void ResourceManagers::AddShader(const std::string& name)
@@ -33,14 +31,14 @@ void ResourceManagers::AddShader(const std::string& name)
 		return;
 	}
 
-	std::shared_ptr<Shader>  shaders;
-	shaders = std::make_shared<Shader>();
+	std::shared_ptr<Shaders>  shaders;
+	shaders = std::make_shared<Shaders>();
 	std::string vs = m_ShaderPath + name + ".vs";
 	std::string fs = m_ShaderPath + name + ".fs";
 
 	shaders->Init(vs, fs);
 
-	m_MapShader.insert(std::pair<std::string, std::shared_ptr<Shader>>(name, shaders));
+	m_MapShader.insert(std::pair<std::string, std::shared_ptr<Shaders>>(name, shaders));
 
 }
 
@@ -51,9 +49,9 @@ void ResourceManagers::AddModel(const std::string& name)
 	{
 		return;
 	}
-	std::string path = m_ModelsPath + name;
-	std::shared_ptr<Model> model = std::make_shared<Model>(path, NFG);
-	m_MapModels.insert(std::pair<std::string, std::shared_ptr<Model>>(name, model));
+	std::string path = m_ModelsPath + name + ".nfg";
+	std::shared_ptr<Models> model = std::make_shared<Models>(path, NFG);
+	m_MapModels.insert(std::pair<std::string, std::shared_ptr<Models>>(name, model));
 }
 
 void ResourceManagers::AddTexture(const std::string& name)
@@ -64,8 +62,8 @@ void ResourceManagers::AddTexture(const std::string& name)
 		return;
 	}
 	std::shared_ptr<Texture> texture = std::make_shared<Texture>();
-	std::string file = m_TexturePath + name;
-	texture->Init(file.c_str(), GL_CLAMP_TO_EDGE, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
+	std::string file = m_TexturePath + name + ".tga";
+	texture->Init(file.c_str(), GL_CLAMP_TO_EDGE, GL_LINEAR_MIPMAP_LINEAR);
 	m_MapTexture.insert(std::pair<std::string, std::shared_ptr<Texture>>(name, texture));
 }
 
@@ -76,7 +74,7 @@ void ResourceManagers::AddFont(const std::string& name)
 	{
 		return;
 	}
-	std::string path = m_FontPath + name;
+	std::string path = m_FontPath + name + ".ttf";
 	std::shared_ptr<Font> font = std::make_shared<Font>(path);
 	m_MapFont.insert(std::pair<std::string, std::shared_ptr<Font>>(name, font));
 }
@@ -101,7 +99,7 @@ void ResourceManagers::RemoveFont(const std::string& name)
 	m_MapFont.erase(name);
 }
 
-std::shared_ptr<Shader> ResourceManagers::GetShader(const std::string& name)
+std::shared_ptr<Shaders> ResourceManagers::GetShader(const std::string& name)
 {
 	auto it = m_MapShader.find(name);
 	if (it != m_MapShader.end())
@@ -109,14 +107,14 @@ std::shared_ptr<Shader> ResourceManagers::GetShader(const std::string& name)
 		return it->second;
 	}
 
-	std::shared_ptr<Shader>  shaders;
-	shaders = std::make_shared<Shader>();
+	std::shared_ptr<Shaders>  shaders;
+	shaders = std::make_shared<Shaders>();
 	std::string vs = m_ShaderPath + name + ".vs";
 	std::string fs = m_ShaderPath + name + ".fs";
 
 	shaders->Init(vs, fs);
 
-	m_MapShader.insert(std::pair<std::string, std::shared_ptr<Shader>>(name, shaders));
+	m_MapShader.insert(std::pair<std::string, std::shared_ptr<Shaders>>(name, shaders));
 
 	return shaders;
 }
@@ -129,22 +127,22 @@ std::shared_ptr<Texture> ResourceManagers::GetTexture(const std::string& name)
 		return it->second;
 	}
 	std::shared_ptr<Texture> texture = std::make_shared<Texture>();
-	std::string file = m_TexturePath + name;
-	texture->Init(file.c_str(), GL_CLAMP_TO_EDGE, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
+	std::string file = m_TexturePath + name + ".tga";
+	texture->Init(file.c_str(), GL_CLAMP_TO_EDGE, GL_LINEAR_MIPMAP_LINEAR);
 	m_MapTexture.insert(std::pair<std::string, std::shared_ptr<Texture>>(name, texture));
 	return texture;
 }
 
-std::shared_ptr<Model> ResourceManagers::GetModel(const std::string& name)
+std::shared_ptr<Models> ResourceManagers::GetModel(const std::string& name)
 {
 	auto it = m_MapModels.find(name);
 	if (it != m_MapModels.end())
 	{
 		return it->second;
 	}
-	std::string path = m_ModelsPath + name;
-	std::shared_ptr<Model> model = std::make_shared<Model>(path, NFG);
-	m_MapModels.insert(std::pair<std::string, std::shared_ptr<Model>>(name, model));
+	std::string path = m_ModelsPath + name + ".nfg";
+	std::shared_ptr<Models> model = std::make_shared<Models>(path, NFG);
+	m_MapModels.insert(std::pair<std::string, std::shared_ptr<Models>>(name, model));
 
 	return model;
 }
@@ -156,53 +154,13 @@ std::shared_ptr<Font> ResourceManagers::GetFont(const std::string& name)
 	{
 		return it->second;
 	}
-	std::string path = m_FontPath + name;
+	std::string path = m_FontPath + name + ".ttf";
 	std::shared_ptr<Font> font = std::make_shared<Font>(path);
 	m_MapFont.insert(std::pair<std::string, std::shared_ptr<Font>>(name, font));
 	return font;
 }
 
-//Sound
-void ResourceManagers::AddSound(const std::string& name)
+std::vector<SoLoud::Wav>* ResourceManagers::GetListSound()
 {
-	auto it = m_MapWave.find(name);
-	if (it != m_MapWave.end())
-	{
-		return;
-	}
-	std::shared_ptr<SoLoud::Wav> wave;
-	std::string sound = m_SoundPath + name;
-	wave = std::make_shared<SoLoud::Wav>();
-	wave->load(sound.c_str());
-	m_MapWave.insert(std::pair<std::string, std::shared_ptr<SoLoud::Wav>>(name, wave));
-}
-
-void ResourceManagers::PlaySound(const std::string& name, bool loop)
-{
-	std::shared_ptr<SoLoud::Wav> wave;
-	auto it = m_MapWave.find(name);
-	if (it != m_MapWave.end())
-	{
-		wave = it->second;
-	}
-	else
-	{
-		std::string sound = m_SoundPath + name;
-		wave = std::make_shared<SoLoud::Wav>();
-		wave->load(sound.c_str());
-		m_MapWave.insert(std::pair<std::string, std::shared_ptr<SoLoud::Wav>>(name, wave));
-	}
-	wave->setLooping(loop);
-	m_Soloud.play(*wave);
-}
-
-void ResourceManagers::StopSound(const std::string& name)
-{
-	std::shared_ptr<SoLoud::Wav> wave;
-	auto it = m_MapWave.find(name);
-	if (it != m_MapWave.end())
-	{
-		wave = it->second;
-	}
-	m_Soloud.stopAudioSource(*wave);
+	return &m_listSoundEffect;
 }

@@ -1,35 +1,48 @@
 #include "Application.h"
 #include "GameStates/GameStateMachine.h"
 #include "GameStates/GameStatebase.h"
+#include "soloud_wav.h"
+
+extern GLint screenWidth;
+extern GLint screenHeight;
+
 
 Application::Application()
 {
+	isEndGame = false;
+	m_CurrentScore = 0;
+	m_onMusic = 0.5f;
 }
+
 
 Application::~Application()
 {
 }
 
+
 void Application::Init()
 {
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-	// Create a 2D camera
-	m_camera = std::make_shared<Camera>(0, 0, Globals::screenWidth, 0, Globals::screenHeight, -1.0f, 1.0f, 10.0f);
-
-	GameStateMachine::GetInstance()->PushState(StateType::STATE_INTRO);
+	gb_soloud.init();
+	GameStateMachine::GetInstance()->PushState(StateTypes::STATE_Intro);
 }
 
 void Application::Update(GLfloat deltaTime)
 {
+	if (isEndGame)
+	{
+		GameStateMachine::GetInstance()->PopState();
+		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_EndGame);
+		Application::GetInstance()->gb_soloud.stopAll();
+		isEndGame = false;
+	}
 	GameStateMachine::GetInstance()->PerformStateChange();
-
 	if (GameStateMachine::GetInstance()->HasState())
 		GameStateMachine::GetInstance()->CurrentState()->Update(deltaTime);
-}
 
+}
 void Application::Render()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -47,14 +60,9 @@ void Application::HandleKeyEvent(unsigned char key, bool bIsPresseded)
 
 void Application::HandleTouchEvent(GLint x, GLint y, bool bIsPresseded)
 {
+
 	if (GameStateMachine::GetInstance()->HasState())
 		GameStateMachine::GetInstance()->CurrentState()->HandleTouchEvents(x, y, bIsPresseded);
-}
-
-void Application::HandleMouseMoveEvent(GLint x, GLint y)
-{
-	if (GameStateMachine::GetInstance()->HasState())
-		GameStateMachine::GetInstance()->CurrentState()->HandleMouseMoveEvents(x, y);
 }
 
 void Application::Exit()

@@ -5,43 +5,43 @@
 #include "GSPlay.h"
 #include "GSIntro.h"
 #include "GSMenu.h"
-#include "GSSetting.h"
-#include "GSHelp.h"
+#include "GSCredit.h"
+#include "GSHighScore.h"
+#include "GSOption.h"
+#include "GSEndGame.h"
 
 #include "GameStatebase.h"
 
-GameStateBase::GameStateBase(StateType stateType) : m_stateType(stateType)
-{}
-
-std::shared_ptr<GameStateBase> GameStateBase::CreateState(StateType stt)
+std::shared_ptr<GameStateBase> GameStateBase::CreateState(StateTypes stt)
 {
 	std::shared_ptr<GameStateBase> gs = nullptr;
 	switch (stt)
 	{
-	case StateType::STATE_INVALID:
+	case STATE_INVALID:
 		break;
-	case StateType::STATE_INTRO:
+	case STATE_Intro:
 		gs = std::make_shared<GSIntro>();
 		break;
-	case StateType::STATE_MENU:
+	case STATE_Menu:
 		gs = std::make_shared<GSMenu>();
 		break;
-	case StateType::STATE_PLAY:
+	case STATE_Play:
 		gs = std::make_shared<GSPlay>();
 		break;
-	case StateType::STATE_SETTING:
-		gs = std::make_shared<GSSetting>();
+	case STATE_Credit:
+		gs = std::make_shared<GSCredit>();
 		break;
-	case StateType::STATE_HELP:
-		gs = std::make_shared<GSSetting>();
+	case STATE_HighScore:
+		gs = std::make_shared<GSHighScore>();
+		break;
+	case STATE_Option:
+		gs = std::make_shared<GSOption>();
+		break;
+	case STATE_EndGame:
+		gs = std::make_shared<GSEndGame>();
 		break;
 	default:
 		break;
 	}
 	return gs;
-}
-
-StateType GameStateBase::GetGameStateType()
-{
-	return m_stateType;
 }

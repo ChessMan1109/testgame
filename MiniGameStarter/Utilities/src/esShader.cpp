@@ -10,7 +10,9 @@
 #define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
 #endif
 
-#ifdef ANDROID
+#ifndef ANDROID
+
+#else
 #include <android/log.h>
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
@@ -22,28 +24,28 @@
 /// \return A new shader object on success, 0 on failure
 //
 #ifndef ANDROID
-GLuint ESUTIL_API esLoadShader(GLenum type, const std::string& filename)
+GLuint ESUTIL_API esLoadShader ( GLenum type, const std::string& filename )
 #else
-GLuint esLoadShader(GLenum type, const std::string& filename)
+GLuint esLoadShader ( GLenum type, const std::string& filename )
 #endif //android
 {
 	GLuint shader;
 	GLint compiled;
 
 	// Create the shader object
-	shader = glCreateShader(type);
+	shader = glCreateShader ( type );
 
-	if (shader == 0)
-		return 0;
+	if ( shader == 0 )
+	return 0;
 
 	// Load the shader source
 #ifndef ANDROID
-	FILE* pf;
-	if (fopen_s(&pf, filename.c_str(), "rb") != 0)
+	FILE * pf;
+	if (fopen_s(&pf, filename.c_str(), "rb" ) != 0)
 		return NULL;
 
 #else
-	FILE* pf = fopen(filename, "rb");
+	FILE *pf = fopen(filename, "rb" );
 	if (pf == NULL)
 	{
 		return 0;
@@ -53,41 +55,41 @@ GLuint esLoadShader(GLenum type, const std::string& filename)
 	long size = ftell(pf);
 	fseek(pf, 0, SEEK_SET);
 
-	char* shaderSrc = new char[size + 1];
+	char * shaderSrc = new char[size + 1];
 	fread(shaderSrc, sizeof(char), size, pf);
 	shaderSrc[size] = 0;
 	fclose(pf);
 
-	glShaderSource(shader, 1, (const char**)&shaderSrc, NULL);
-	delete[] shaderSrc;
+	glShaderSource ( shader, 1, (const char **)&shaderSrc, NULL );
+	delete [] shaderSrc;
 
 	// Compile the shader
-	glCompileShader(shader);
+	glCompileShader ( shader );
 
 	// Check the compile status
-	glGetShaderiv(shader, GL_COMPILE_STATUS, &compiled);
+	glGetShaderiv ( shader, GL_COMPILE_STATUS, &compiled );
 
-	if (!compiled)
+	if ( !compiled ) 
 	{
 		GLint infoLen = 0;
 
-		glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &infoLen);
+		glGetShaderiv ( shader, GL_INFO_LOG_LENGTH, &infoLen );
 
-		if (infoLen > 1)
+		if ( infoLen > 1 )
 		{
-			char* infoLog = new char[infoLen];
+			char* infoLog = new char  [infoLen];
 
 
-			glGetShaderInfoLog(shader, infoLen, NULL, infoLog);
+			glGetShaderInfoLog ( shader, infoLen, NULL, infoLog );
 #ifndef ANDROID
-			esLogMessage("Error compiling shader:\n%s\n", infoLog);
+			esLogMessage ( "Error compiling shader:\n%s\n", infoLog );  
 #else
-			__android_log_print(ANDROID_LOG_ERROR, "GAME", "Error linking program:\n%s\n", infoLog);
+			__android_log_print(ANDROID_LOG_ERROR,"CUONG.NV","Error linking program:\n%s\n", infoLog ); 
 #endif //android
-			delete[] infoLog;
+			delete [] infoLog;
 		}
 
-		glDeleteShader(shader);
+		glDeleteShader ( shader );
 		return 0;
 	}
 
@@ -101,50 +103,50 @@ GLuint esLoadShader(GLenum type, const std::string& filename)
 /// \return A new program object linked with the vertex/fragment shader pair, 0 on failure
 
 #ifndef ANDROID
-GLuint ESUTIL_API esLoadProgram(GLuint vertexShader, GLuint fragmentShader)
+GLuint ESUTIL_API esLoadProgram ( GLuint vertexShader, GLuint fragmentShader )
 #else
-GLuint esLoadProgram(GLuint vertexShader, GLuint fragmentShader)
+GLuint esLoadProgram ( GLuint vertexShader, GLuint fragmentShader )
 #endif //android
 {
 	GLuint programObject;
 	GLint linked;
 
 	// Create the program object
-	programObject = glCreateProgram();
+	programObject = glCreateProgram ( );
 
-	if (programObject == 0)
+	if ( programObject == 0 )
 		return 0;
 
-	glAttachShader(programObject, vertexShader);
-	glAttachShader(programObject, fragmentShader);
+	glAttachShader ( programObject, vertexShader );
+	glAttachShader ( programObject, fragmentShader );
 
 	// Link the program
-	glLinkProgram(programObject);
+	glLinkProgram ( programObject );
 
 	// Check the link status
-	glGetProgramiv(programObject, GL_LINK_STATUS, &linked);
+	glGetProgramiv ( programObject, GL_LINK_STATUS, &linked );
 
-	if (!linked)
+	if ( !linked ) 
 	{
 		GLint infoLen = 0;
 
-		glGetProgramiv(programObject, GL_INFO_LOG_LENGTH, &infoLen);
+		glGetProgramiv ( programObject, GL_INFO_LOG_LENGTH, &infoLen );
 
-		if (infoLen > 1)
+		if ( infoLen > 1 )
 		{
 			char* infoLog = new char[sizeof(char) * infoLen];
 
 
-			glGetProgramInfoLog(programObject, infoLen, NULL, infoLog);
+			glGetProgramInfoLog ( programObject, infoLen, NULL, infoLog );
 #ifndef ANDROID
-			esLogMessage("Error linking program:\n%s\n", infoLog);
+			esLogMessage ( "Error linking program:\n%s\n", infoLog );  
 #else
-			__android_log_print(ANDROID_LOG_ERROR, "CUONG.NV", "Error linking program:\n%s\n", infoLog);
+			__android_log_print(ANDROID_LOG_ERROR,"CUONG.NV","Error linking program:\n%s\n", infoLog ); 
 #endif //android
-			delete[] infoLog;
+			delete infoLog;
 		}
 
-		glDeleteProgram(programObject);
+		glDeleteProgram ( programObject );
 		return 0;
 	}
 

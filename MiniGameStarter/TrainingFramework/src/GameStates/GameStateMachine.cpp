@@ -2,8 +2,11 @@
 #include "GameStateMachine.h"
 #include "GameStateBase.h"
 
-GameStateMachine::GameStateMachine() : m_running(true), m_pActiveState(nullptr), m_pNextState(nullptr), m_fullscreen(false)
+GameStateMachine::GameStateMachine()
 {
+	m_running = true;
+	m_pActiveState = 0;
+	m_pNextState = 0;
 }
 
 
@@ -15,16 +18,16 @@ GameStateMachine::~GameStateMachine()
 void GameStateMachine::Cleanup()
 {
 	// cleanup the all states
-	while (!m_StateStack.empty()) {
-		m_StateStack.back()->Exit();
-		m_StateStack.pop_back();
+	while (!m_StatesStack.empty()) {
+		m_StatesStack.back()->Exit();
+		m_StatesStack.pop_back();
 	}
 }
 
-void GameStateMachine::ChangeState(StateType state)
+void GameStateMachine::ChangeState(StateTypes stt)
 {
-	std::shared_ptr<GameStateBase> nextState = GameStateBase::CreateState(state);
-	ChangeState(nextState);
+	std::shared_ptr<GameStateBase> gstb = GameStateBase::CreateState(stt);
+	ChangeState(gstb);
 }
 
 void GameStateMachine::ChangeState(std::shared_ptr<GameStateBase> state)
@@ -32,55 +35,61 @@ void GameStateMachine::ChangeState(std::shared_ptr<GameStateBase> state)
 	m_pNextState = state;
 }
 
-void GameStateMachine::PushState(StateType state)
+
+void GameStateMachine::PushState(StateTypes stt)
 {
-	std::shared_ptr<GameStateBase> nextState = GameStateBase::CreateState(state);
+	std::shared_ptr<GameStateBase> state = GameStateBase::CreateState(stt);
 	// pause current state
-	if (!m_StateStack.empty()) {
-		m_StateStack.back()->Pause();
+	if (!m_StatesStack.empty()) {
+		m_StatesStack.back()->Pause();
 	}
 
-	m_pNextState = nextState;
+	// store and init the new state
+	//states.push_back(state);
+	//states.back()->Init();
+	m_pNextState = state;
 }
 
 void GameStateMachine::PopState()
 {
 	// cleanup the current state
-	if (!m_StateStack.empty()) {
-		m_StateStack.back()->Exit();
-		m_StateStack.pop_back();
+	if (!m_StatesStack.empty()) {
+		m_StatesStack.back()->Exit();
+		m_StatesStack.pop_back();
 	}
 
 	// resume previous state
-	if (!m_StateStack.empty()) {
-		m_StateStack.back()->Resume();
-		m_pActiveState = m_StateStack.back();
+	if (!m_StatesStack.empty()) {
+		m_StatesStack.back()->Resume();
 	}
+	m_pActiveState = m_StatesStack.back();
 }
 
 void  GameStateMachine::PerformStateChange()
 {
 	if (m_pNextState != 0)
 	{
-		if (m_StateStack.empty() == false) {
-			if(m_pActiveState->GetGameStateType() == StateType::STATE_INTRO)
-			{
-				// Cleanup Intro state
-				m_pActiveState->Exit();
-				m_StateStack.pop_back();
-			}
-			else
-			{
-				// Pause other states
-				m_pActiveState->Pause();
-			}
+		// cleanup the current state
+		if (!m_StatesStack.empty()) {
+			m_StatesStack.back()->Exit();
+			//delete states.back();
+			//states.pop_back();
 		}
 
 		// store and init the new state
-		m_StateStack.push_back(m_pNextState);
-		m_StateStack.back()->Init();
+		m_StatesStack.push_back(m_pNextState);
+		m_StatesStack.back()->Init();
 		m_pActiveState = m_pNextState;
 	}
 
 	m_pNextState = 0;
+}
+
+void  GameStateMachine::ReLoadCurrentState(StateTypes stt)
+{
+	if (!m_StatesStack.empty()) {
+		PopState();
+		ChangeState(stt);
+		PerformStateChange();
+	}
 }
